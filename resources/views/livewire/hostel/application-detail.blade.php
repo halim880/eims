@@ -1,6 +1,4 @@
 <div class="row mt-3">
-
-
     @if(!$showAllotForm)
         <div class="col-md-10">
             <div class="card">
@@ -120,14 +118,14 @@
         </div>
     @else
         <div class="col-md-6">
-            <div class="row mt-2">
+            <div class="row">
                 <div>
                     <div class="card">
-                        <div class="card-body p-4">
+                        <div class="card-body p-2">
                           <form wire:submit.prevent="allotSit">
                             <h2>Allot Sit For {{$application['student_name']}}</h2>
               
-                            <div class="form-group mb-3">
+                            <div class="form-group mb-1">
                               <label for="semester_id">Semester</label>
                               <select wire:model.defer = "semester_id" id="semester_id" class="form-control">
                                   @foreach ($semesters as $semester)
@@ -136,13 +134,13 @@
                               </select>
                             </div>
               
-                            <div class="form-group mb-3">
+                            <div class="form-group mb-1">
                               <label for="room_no">Room No.</label>
                               <input wire:model.defer = "room_no" type="number" class="form-control" required>
                               @error('room_no') <span class="error" style="color: red">{{ $message }}</span> @enderror
                             </div>
               
-                            <div class="form-group mb-3">
+                            <div class="form-group mb-1">
                               <label for="sit_no">Sit No.</label>
                               <input wire:model.defer = "sit_no" type="number" class="form-control" required>
                             </div>
@@ -155,18 +153,7 @@
                     </div>
                 </div>
             </div>
-            
-            <script>
-                  window.addEventListener('hostel-student-stored', event => {
-                    swal('Success', 'Student saved', 'success');
-                })
-                window.addEventListener('student-not-found', event => {
-                    swal('Opps', 'Student Not found With the given ID', 'warning');
-                })
-                window.addEventListener('student-not-found', event => {
-                    swal('Warning', 'Student Not found with ID '+envent.id, 'warning');
-                })
-            </script>
+        
         </div>
     @endif
 </div>
@@ -179,4 +166,20 @@
     window.addEventListener('application_rejected', event => {
         swal('Success', 'Application is rejected', 'success');
     })
+    window.addEventListener('hostel-student-stored', event => {
+        swal('Success', 'Student saved', 'success');
+    })
+    window.addEventListener('student-not-found', event => {
+        swal('Opps', 'Student Not found With the given ID', 'warning');
+    })
+    window.addEventListener('student-not-found', event => {
+        swal('Warning', 'Student Not found with ID '+envent.id, 'warning');
+    })
 </script>
+
+<style>
+    table th,
+    table tr td{
+        padding: 4px !important;
+    }
+</style>

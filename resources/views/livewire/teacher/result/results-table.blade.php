@@ -11,8 +11,9 @@
                                 <tr>
                                     <th>Student ID</th>
                                     <th>Course Code</th>
-                                    <th>Obtained marks</th>
-                                    <th>Exam</th>
+                                    <th>Attendance</th>
+                                    <th>Term test</th>
+                                    <th>Final marks</th>
                                     <th>action</th>
                                 </tr>
                             </thead>
@@ -23,8 +24,9 @@
                                 <tr class="result">
                                     <td>{{$result->student_id}}</td>
                                     <td>{{$result->course_code}}</td>
-                                    <td>{{$result->obtained_marks}}</td>
-                                    <td>{{$result->exam_name}}</td>
+                                    <td>{{$result->attendance_marks}}</td>
+                                    <td>{{$result->term_test_marks}}</td>
+                                    <td>{{$result->final_marks}}</td>
                                     <td>
                                         <span class="edit_button" wire:click="showresult({{$result}})"><i class="uil-edit"></i></span>
                                     </td>

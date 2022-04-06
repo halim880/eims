@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\TeacherLoginController;
+use App\Http\Livewire\Teacher\Courses;
 use App\Http\Livewire\Teacher\Dashboard;
 use App\Http\Livewire\Teacher\Result\ResultEntry;
 use App\Http\Livewire\Teacher\Result\ResultShow;
@@ -16,5 +17,7 @@ Route::prefix('/teacher')->name('teacher.')->middleware('teacher')->group(functi
     Route::get('/result-entry', ResultEntry::class)->name('result.entry');
     Route::get('/result-table', ResultsTable::class)->name('results.table');
     Route::get('/result-show/{result}', ResultShow::class)->name('result.show');
+
+    Route::get('courses', Courses::class)->name('courses');
 });
 

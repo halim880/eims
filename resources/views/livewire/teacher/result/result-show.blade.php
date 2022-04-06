@@ -27,13 +27,35 @@
                     <td>{{$result->full_marks}}</td>
                 </tr>
                 <tr>
-                    <th>Obtained marks</th>
+                    <th>Attendance</th>
                     <th>:</th>
                     <td>
                         @if (!$editable)
-                            {{$obtained_marks}}
+                            {{$attendance_marks}}
                         @else 
-                            <input type="number" wire:model = "obtained_marks">
+                            <input type="number" wire:model = "attendance_marks">
+                        @endif
+                    </td>
+                </tr>
+                <tr>
+                    <th>Term test</th>
+                    <th>:</th>
+                    <td>
+                        @if (!$editable)
+                            {{$term_test_marks}}
+                        @else 
+                            <input type="number" wire:model = "term_test_marks">
+                        @endif
+                    </td>
+                </tr>
+                <tr>
+                    <th>Final marks</th>
+                    <th>:</th>
+                    <td>
+                        @if (!$editable)
+                            {{$final_marks}}
+                        @else 
+                            <input type="number" wire:model = "final_marks">
                         @endif
                     </td>
                 </tr>
@@ -48,7 +70,6 @@
                     <th>:</th>
                     <td>{{$result->created_at->format('h:m:s a, d M Y')}}</td>
                 </tr>
-
             </table>
         </div>
 
@@ -85,3 +106,11 @@
     });
   })
 </script>
+
+
+<style>
+    table th,
+    table tr td{
+        padding: 4px !important;
+    }
+</style>

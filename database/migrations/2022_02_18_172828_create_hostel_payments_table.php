@@ -16,8 +16,10 @@ return new class extends Migration
     {
         Schema::create('hostel_payments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('student_id')->references('id')->on('students')->onDelete('cascade');
             $table->foreignId('semester_id')->references('id')->on('semesters')->onDelete('cascade');
             $table->foreignId('hostel_member_id')->references('id')->on('hostel_members')->onDelete('cascade');
+            $table->foreignId('hostel_fee_id')->references('id')->on('hostel_fees')->onDelete('cascade');
             $table->integer('amount');
             $table->string('status')->default(PaymentStatus::DUE);
             $table->timestamps();

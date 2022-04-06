@@ -5,6 +5,8 @@ use App\Http\Livewire\Hostel\AddNewStudent;
 use App\Http\Livewire\Hostel\ApplicationDetail;
 use App\Http\Livewire\Hostel\Applications;
 use App\Http\Livewire\Hostel\Dashboard;
+use App\Http\Livewire\Hostel\HostelClearance;
+use App\Http\Livewire\Hostel\ManageNotice;
 use App\Http\Livewire\Hostel\Notices;
 use App\Http\Livewire\Hostel\Payments;
 use App\Http\Livewire\Hostel\Student\ApplyForSit;
@@ -21,13 +23,19 @@ Route::post('provost/login', [ProvostLoginController::class, 'authenticate'])->n
 Route::prefix('hostel/')->name('hostel.')->middleware('provost')->group(function (){
     Route::get('dashboard', Dashboard::class)->name('dashboard');
     Route::get('students', Students::class)->name('students');
-    Route::get('notice', Notices::class)->name('notice');
+
+
+    Route::get('notices', Notices::class)->name('notices');
+    Route::get('notice-create', ManageNotice::class)->name('notice.create');
+
     Route::get('payments', Payments::class)->name('payments');
     Route::get('applications', Applications::class)->name('applications');
 
-    Route::get('student/{hostelMember}/show', StudentDetails::class)->name('student.show');
+    Route::get('student/{student}/show', StudentDetails::class)->name('student.show');
     Route::get('student/create', AddNewStudent::class)->name('student.create');
 
     Route::get('application-details/{form_id}', ApplicationDetail::class);
+
+    Route::get('clearance', HostelClearance::class)->name('clearance');
 });
   

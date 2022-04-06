@@ -10,7 +10,9 @@ class ResultShow extends Component
 {
     public $result;
 
-    public $obtained_marks;
+    public $final_marks;
+    public $term_test_marks;
+    public $attendance_marks;
 
     public bool $editable = false;
 
@@ -26,7 +28,9 @@ class ResultShow extends Component
 
     public function mount(ResultView $result){
         $this->result = $result;
-        $this->obtained_marks = $result->obtained_marks;
+        $this->final_marks = $result->final_marks;
+        $this->attendance_marks = $result->attendance_marks;
+        $this->term_test_marks = $result->term_test_marks;
     }
 
     public function edit(){
@@ -35,7 +39,9 @@ class ResultShow extends Component
 
     public function update(){
         $result = Result::find($this->result->id);
-        $result->obtained_marks = $this->obtained_marks;
+        $result->final_marks = $this->final_marks;
+        $result->attendance_marks = $this->attendance_marks;
+        $result->term_test_marks = $this->term_test_marks;
         $result->update();
         $this->editable = false;
         $this->dispatchBrowserEvent('result_updated');

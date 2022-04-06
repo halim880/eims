@@ -74,6 +74,27 @@
             </li>
 
             <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#admin-course" aria-expanded="false" aria-controls="admin-course" class="side-nav-link">
+                    <i class="uil-briefcase"></i>
+                    <span> Course </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="admin-course">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="{{route('admin.course.table')}}">Course table</a>
+                        </li>
+                        <li>
+                            <a href="{{route('admin.course.assign')}}">Assign course</a>
+                        </li>
+                        <li>
+                            <a href="{{route('admin.course.entry')}}">Course Entry <span class="badge rounded-pill badge-success-lighten font-10 float-end">New</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#admin-teacher" aria-expanded="false" aria-controls="admin-teacher" class="side-nav-link">
                     <i class="uil-briefcase"></i>
                     <span> Teacher </span>
@@ -82,10 +103,10 @@
                 <div class="collapse" id="admin-teacher">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="{{route('admin.teacher.entry')}}">Teacher Entry</a>
+                            <a href="{{route('admin.teacher.table')}}">Teacher table</a>
                         </li>
                         <li>
-                            <a href="ghj">Teachers<span class="badge rounded-pill badge-success-lighten font-10 float-end">New</span></a>
+                            <a href="{{route('admin.teacher.entry')}}">Teacher Entry <span class="badge rounded-pill badge-success-lighten font-10 float-end">New</span></a>
                         </li>
                     </ul>
                 </div>
@@ -151,10 +172,10 @@
                 <div class="collapse" id="sidebarHostel">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="ioiyh">Your Details</a>
+                            <a href="{{route("admin.hostel.manage")}}">Manage Hostel</a>
                         </li>
                         <li>
-                            <a href="opjhhy"> Apply for Sit<span class="badge rounded-pill badge-success-lighten font-10 float-end">New</span></a>
+                            <a href="{{route('admin.hostel_fee_setup')}}">Fee setup</a>
                         </li>
                     </ul>
                 </div>

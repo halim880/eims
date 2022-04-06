@@ -2,17 +2,8 @@
 <div class="row mt-3">
     <div class="col-md-8">
         <div class="card">
-            <div class="card-header">
-                <h2>Payment history</h2>
-
-                <button class="btn btn-primary btn-lg btn-block" id="sslczPayBtn"
-                        token="if you have any token validation"
-                        postdata="your javascript arrays or objects which requires in backend"
-                        order="If you already have the transaction generated for current order"
-                        endpoint="{{ url('/pay-via-ajax') }}"> Pay Now
-                </button>
-            </div>
             <div class="card-body">
+                <h3>Payment history</h3>
                 <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
                     <thead>
                         <th>student ID</th>
@@ -35,3 +26,9 @@
         </div>
     </div>
 </div>
+
+<style>
+    table tr td{
+        padding: 5px !important;
+    }
+</style>

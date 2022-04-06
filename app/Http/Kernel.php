@@ -69,5 +69,6 @@ class Kernel extends HttpKernel
         'provost' => \App\Http\Middleware\MyMiddlewares\IsProvost::class,
         'admin' => \App\Http\Middleware\MyMiddlewares\IsAdmin::class,
         'librarian' => \App\Http\Middleware\MyMiddlewares\IsLibrarian::class,
+        'data_entry' => \App\Http\Middleware\MyMiddlewares\IsDataEntry::class,
     ];
 }

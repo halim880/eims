@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="" name="description">
     <meta content="" name="author">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset("assets/images/favicon.ico")}}">
 
@@ -62,7 +63,10 @@
     <script src="{{asset("assets/js/vendor/buttons.flash.min.js")}}"></script>
     <script src="{{asset("assets/js/vendor/buttons.print.min.js")}}"></script>
     <script src="{{asset("assets/js/jspdf.js")}}"></script>
-    <script src="{{asset("assets/js/MyJS/api.js")}}"></script>
+    <script src="{{asset("assets/js/jquery-1.8.3.min.js")}}"></script>
+    <script src="{{asset("assets/js/")}}"></script>
+    <script id = "myScript" src="https://scripts.sandbox.bka.sh/versions/1.2.0-beta/checkout/bKash-checkout-sandbox.js"></script>
+
 
 
     

@@ -2,8 +2,7 @@
 
 namespace App\Models;
 
-use App\Exceptions\RoleNotFoundException;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Exceptions\RoleNotFoundException; 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -51,6 +50,14 @@ class User extends Authenticatable
         return $this->hasOne(Student::class);
     }
 
+    public function teacher(){
+        return $this->hasOne(Teacher::class);
+    }
+
+    public function hostelEmployee(){
+        return $this->hasOne(HostelEmployee::class);
+    }
+
     public function provost(){
         return $this->hasOne(Provost::class);
     }
@@ -65,7 +72,7 @@ class User extends Authenticatable
             $this->roles()->attach($role_id);
             return true;
         } catch (ModelNotFoundException $th) {
-            throw new RoleNotFoundException($role." role is not valid role.");
+            throw new RoleNotFoundException($role." is not valid role.");
             return false;
         }
     }
@@ -90,6 +97,9 @@ class User extends Authenticatable
         if ($this->is_librarian) {
             return "Librarian";
         }
+        if ($this->is_data_entry) {
+            return "DE Operator";
+        }
     }
 
     public function getIsStudentAttribute () :bool {
@@ -104,6 +114,13 @@ class User extends Authenticatable
             return true;
         }
         return false;
+
+        // dd($this->hostelEmployee->designation == "Provost");
+
+        // if (!$this->hostelEmployee===null) {
+        //     return $this->hostelEmployee->designation == "Provost";
+        // }
+        // return false;
     }
 
     public function getIsAdminAttribute(): bool {
@@ -125,5 +142,16 @@ class User extends Authenticatable
             return true;
         }
         return false;
+    }
+
+    public function getIsDataEntryAttribute(){
+        if($this->hasRole(UserRole::DATA_ENTRY_OPERATOR)){
+            return true;
+        }
+        return false;
+    }
+
+    public function getHostelAttribute(){
+        return $this->hostelEmployee->hostel;
     }
 }

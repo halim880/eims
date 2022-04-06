@@ -13,6 +13,10 @@
         @include('layouts.sidebar.teacher_sidebar')
     @elseif (Auth::user()->is_admin)
         @include('layouts.sidebar.admin_sidebar')
+    @elseif (Auth::user()->is_librarian)
+        @include('layouts.sidebar.library_sidebar')
+    @elseif (Auth::user()->is_data_entry)
+        @include('layouts.sidebar.data_entry_sidebar')
     @endif
 
     <div class="content-page">

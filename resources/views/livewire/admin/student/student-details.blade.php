@@ -1,48 +1,61 @@
-<div class="row mt-3">
+<div class="row mt-2">
     <div class="col-md-10">
         <div class="card">
-            <div class="card-header">
-                <h3>Applicant Details</h3>
-            </div>
             <div class="card-body">
+                <h3>Student Details</h3>
                 <table class="table">
                     <tr>
-                        <th>Student ID</th>
+                        <th class="heading">Student ID</th>
                         <th>:</th>
                         <td>{{$student->id}}</td>
                     </tr>
                     <tr>
-                        <th>Student Name</th>
+                        <th class="heading">Student Name</th>
                         <th>:</th>
                         <td>{{$student->name}}</td>
                     </tr>
                     <tr>
-                        <th>Father Name</th>
+                        <th class="heading">Department</th>
+                        <th>:</th>
+                        <td>{{$student->department->name}}</td>
+                    </tr>
+                    <tr>
+                        <th class="heading">Session</th>
+                        <th>:</th>
+                        <td>{{$student->session->name}}</td>
+                    </tr>
+                    <tr>
+                        <th class="heading">Semester</th>
+                        <th>:</th>
+                        <td>{{$student->semester->name}}</td>
+                    </tr>
+                    <tr>
+                        <th class="heading">Father Name</th>
                         <th>:</th>
                         <td>{{$student->father_name}}</td>
                     </tr>
                     <tr>
-                        <th>Mother Name</th>
+                        <th class="heading">Mother Name</th>
                         <th>:</th>
                         <td>{{$student->mother_name}}</td>
                     </tr>
                     <tr>
-                        <th>Phone</th>
+                        <th class="heading">Phone</th>
                         <th>:</th>
                         <td>{{$student->phone}}</td>
                     </tr>
                     <tr>
-                        <th>Email</th>
+                        <th class="heading">Email</th>
                         <th>:</th>
                         <td>{{$student->email}}</td>
                     </tr>
                     <tr>
-                        <th>Current Address</th>
+                        <th class="heading">Current Address</th>
                         <th>:</th>
                         <td>{{$student->current_address}}</td>
                     </tr>
                     <tr>
-                        <th>Permanent Address</th>
+                        <th class="heading">Permanent Address</th>
                         <th>:</th>
                         <td>{{$student->permanent_address}}</td>
                     </tr>
@@ -61,3 +74,16 @@
         swal('Success', 'student is rejected', 'success');
     })
 </script>
+
+<style scoped>
+    th, td{
+        padding: 5px !important;
+    }
+
+    .heading {
+        width: 150px;
+    }
+    .separator{
+        width: 30px;
+    }
+</style>

@@ -1,0 +1,3 @@
+BEGIN
+SELECT stv.student_name, stv.department, stv.session, stv.semester, stv.father_name, stv.mother_name, stv.dob, stv.blood_group, stv.student_id, hsa.father_occupation, hsa.mother_occupation, hsa.total_family_member, hsa.yearly_family_income, hsa.current_address, hsa.permanent_address, hsa.created_at FROM hostel_sit_applications AS hsa JOIN students_view AS stv ON stv.student_id = hsa.student_id ORDER BY hsa.id DESC;
+END

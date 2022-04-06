@@ -12,6 +12,22 @@ class RegistrationForm extends Model
     public const IMAGE_DIRECTORY = 'public/image/student/registration/image';
     public const SIGNATURE_DIRECTORY = 'public/image/student/registration/signature';
 
+    public function student(){
+        return $this->belongsTo(Student::class);
+    }
+
+    public function department(){
+        return $this->belongsTo(Department::class);
+    }
+
+    public function semester(){
+        return $this->belongsTo(Semester::class);
+    }
+
+    public function courses(){
+        return $this->hasMany(Course::class, 'registration_form_id', 'id');
+    }
+
     public static function getImagePath(){
         return storage_path(self::IMAGE_DIRECTORY).'/';
     }

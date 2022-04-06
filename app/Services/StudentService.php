@@ -2,6 +2,7 @@
 namespace App\Services;
 
 use App\Helpers\ApplicationStatus;
+use App\Http\Livewire\Admin\Student\StudentEntry;
 use App\Models\AdmissionApplications;
 use App\Repositories\StudentRepository;
 use Illuminate\Support\Facades\DB;
@@ -24,5 +25,9 @@ class StudentService {
             return true;
         }
         return false;
+    }
+
+    public static function studentEntry($student) : bool{
+        return StudentRepository::storeStudent($student);
     }
 }

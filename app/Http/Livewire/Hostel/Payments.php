@@ -10,7 +10,7 @@ class Payments extends Component
     public $payments;
     public function render()
     {
-        $this->payments = HostelPaymentView::orderBy('id', 'desc')->get();
+        $this->payments = HostelPaymentView::orderBy('updated_at', 'desc')->get();
         return view('livewire.hostel.payments');
     }
 }

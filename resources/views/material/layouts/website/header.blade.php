@@ -12,14 +12,11 @@
             <li><a href="{{route('page.blog')}}">Blog</a></li>
             <li><a href="{{route('page.events')}}">Events</a></li>
             @auth
-                @if (Auth::user()->hasRole('teacher'))
-                    <li><a href="{{url('teacher/home')}}" class="floating-button">
-                        <i class="material-icons">dashboard</i>
-                    </a></li>
-                @endif
-
                 @if (Auth::user()->hasRole('student'))
-                    <li><a href="{{url('student/home')}}">Your Profile</a></li>
+                    <li><a href="{{url('teacher/dashboard')}}">Your Profile</a></li>
+                @endif
+                @if (Auth::user()->hasRole('student'))
+                    <li><a href="{{url('student/dashboard')}}">Your Profile</a></li>
                 @endif
 
                 @if (Auth::user()->is_provost)

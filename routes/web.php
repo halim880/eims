@@ -13,6 +13,7 @@ include_once __DIR__ . '/teacher_routes.php';
 include_once __DIR__ . '/admin_routes.php';
 include_once __DIR__ . '/material_routes.php';
 include_once __DIR__ . '/library_routes.php';
+include_once __DIR__ . '/data_entry_routes.php';
 
 Route::get('/', function () {
     $events = Event::all();

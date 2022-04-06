@@ -15,11 +15,11 @@ class CreateIssueBooksTable extends Migration
     {
         Schema::create('issue_books', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('student_id');
-            $table->unsignedBigInteger('book_id');
-            $table->string('book_code');
-            $table->string('issue_date');
-            $table->string('return_date');
+            $table->foreignId('student_id')->references('id')->on('students')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('book_id')->references('id')->on('books')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('book_code')->nullable();
+            $table->date('issue_date');
+            $table->date('return_date');
             $table->string('status')->default('active');
             $table->timestamps();
         });

@@ -17,11 +17,6 @@ use Laravel\Fortify\Fortify;
 
 class FortifyServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
     public function register()
     {
         $this->app->instance(LoginResponse::class, new class implements LoginResponse {
@@ -33,7 +28,7 @@ class FortifyServiceProvider extends ServiceProvider
                 }
 
                 if($user->is_provost){
-                    return redirect()->route('provost.dashboard');
+                    return redirect()->route('hostel.dashboard');
                 }
 
                 if($user->is_teacher){
@@ -48,6 +43,10 @@ class FortifyServiceProvider extends ServiceProvider
                     return redirect()->route('library.dashboard');
                 }
 
+                if($user->is_data_entry){
+                    return redirect()->route('data_entry.dashboard');
+                }
+                
                 return redirect('/');
             }
         });

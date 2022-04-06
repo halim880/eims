@@ -22,8 +22,8 @@ class StudentDetails extends Component
         return view('livewire.hostel.student-details');
     }
 
-    public function mount(HostelMember $hostelMember){
-        $this->student = HostelStudentView::where('student_id', $hostelMember->student_id)->first();
+    public function mount($student_id){
+        $this->student = HostelStudentView::where('student_id', $student_id)->first();
     }
 
     public function paymentReceive($id){

@@ -45,7 +45,7 @@ class StudentSignupRequest extends FormRequest
         ];
     }
 
-    public function toArray(){
+    public function toArray() : array{
         return [
             'id'=> $this['id'],
             'user_id'=> $this->getStudentUserId(),

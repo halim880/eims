@@ -2,12 +2,6 @@
 
     <!-- LOGO -->
     <a href="index.html" class="logo text-center logo-light mt-3">
-        {{-- <span class="logo-lg">
-            <img src="{{asset('assets/images/logo.png')}}" alt="" height="16">
-        </span>
-        <span class="logo-sm">
-            <img src="assets/images/logo_sm.png" alt="" height="16">
-        </span> --}}
         <h3>EIMS</h3>
     </a>
 
@@ -49,13 +43,6 @@
             </li>
 
             <li class="side-nav-item">
-                <a href="{{route('student.classes')}}" class="side-nav-link">
-                    <i class="uil-home-alt"></i>
-                    <span> Classes </span>
-                </a>
-            </li>
-
-            <li class="side-nav-item">
                 <a href="{{route('student.exam')}}" class="side-nav-link">
                     <i class="uil-home-alt"></i>
                     <span> Exam </span>
@@ -84,12 +71,22 @@
             </li>
 
             <li class="side-nav-item">
-                <a href="{{route('student.library')}}" class="side-nav-link">
-                    <i class="uil-books"></i>
+                <a data-bs-toggle="collapse" href="#sidebarLibrary" aria-expanded="false" aria-controls="sidebarLibrary" class="side-nav-link">
+                    <i class="uil-briefcase"></i>
                     <span> Library </span>
+                    <span class="menu-arrow"></span>
                 </a>
+                <div class="collapse" id="sidebarLibrary">
+                    <ul class="side-nav-second-level">
+                            <li>
+                                <a href="{{route('student.library')}}">Browse Books</a>
+                            </li>
+                        <li>
+                            <a href="{{route('student.library.borrowed_books')}}">Borrowed books</a>
+                        </li>
+                    </ul>
+                </div>
             </li>
-
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarMembers" aria-expanded="false" aria-controls="sidebarMembers" class="side-nav-link">
                     <i class="uil-briefcase"></i>
@@ -98,14 +95,20 @@
                 </a>
                 <div class="collapse" id="sidebarMembers">
                     <ul class="side-nav-second-level">
-                        <li>
-                            <a href="{{route('student.hostel')}}">Your Details</a>
-                        </li>
+                            <li>
+                                <a href="{{route('student.hostel')}}">Your Details</a>
+                            </li>
                         <li>
                             <a href="{{route('student.hostel.apply-for-sit')}}"> Apply for Sit<span class="badge rounded-pill badge-success-lighten font-10 float-end">New</span></a>
                         </li>
                     </ul>
                 </div>
+            </li>
+            <li class="side-nav-item">
+                <a href="{{route('student.clearance')}}" class="side-nav-link">
+                    <i class="uil-home-alt"></i>
+                    <span>Clearance Form </span>
+                </a>
             </li>
 
         </ul>
@@ -116,3 +119,9 @@
     <!-- Sidebar -left -->
 
 </div>
+
+<style>
+    table tr td{
+        padding: 5px !;
+    }
+</style>

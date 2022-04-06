@@ -15,8 +15,9 @@ class CreateHostelMembersTable extends Migration
     {
         Schema::create('hostel_members', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('student_id');
-            $table->unsignedBigInteger('hostel_id');
+            $table->foreignId('student_id')->references('id')->on("students")->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('hostel_id')->references('id')->on("hostels")->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('semester_id')->references('id')->on("hostels")->onDelete('cascade')->onUpdate('cascade');
             $table->integer('room_no');
             $table->integer('sit_no');
             $table->timestamps();

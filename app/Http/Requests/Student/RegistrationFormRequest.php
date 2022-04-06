@@ -39,7 +39,7 @@ class RegistrationFormRequest extends FormRequest
         else return false;
     }
 
-    public function toArray()
+    public function toArray() : array
     {
         $student = Student::find($this->student_id);
         return [

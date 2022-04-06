@@ -46,7 +46,7 @@
                     Name : <span style="font-weight: bold">{{Auth::user()->name}}</span>
                     Reg. : <span style="font-weight: bold">{{Auth::user()->student->id}}</span>
                     Dept. : <span style="font-weight: bold">{{Auth::user()->student->department_name}}</span>
-                    Session : <span style="font-weight: bold">{{Auth::user()->student->session}}</span>
+                    Session : <span style="font-weight: bold">{{Auth::user()->student->session->name}}</span>
                 </p>
             </div>
         </div>

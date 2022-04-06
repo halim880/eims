@@ -16,6 +16,7 @@ class CreateCourseTeacherTable extends Migration
         Schema::create('course_teacher', function (Blueprint $table) {
             $table->foreignId('teacher_id')->references('id')->on('teachers')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('course_id')->references('id')->on('courses')->onDelete('cascade')->onUpdate('cascade');
+            $table->primary(['teacher_id', 'course_id']);
         });
     }
 

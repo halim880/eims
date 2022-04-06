@@ -16,12 +16,13 @@ class CreateTeachersTable extends Migration
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('designation');
             $table->string('phone');
             $table->string('nid');
             $table->string('dob');
             $table->string('father_name');
             $table->string('mother_name');
-            $table->unsignedBigInteger('department_id');
+            $table->foreignId('department_id')->references('id')->on('departments');
             $table->string('current_address');
             $table->string('permanent_address');
             $table->string('image');

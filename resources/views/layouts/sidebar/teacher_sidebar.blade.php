@@ -44,14 +44,14 @@
             <li class="side-nav-item">
                 <a href="{{route('student.courses')}}" class="side-nav-link">
                     <i class="uil-home-alt"></i>
-                    <span> Cources </span>
+                    <span> Classes </span>
                 </a>
             </li>
 
             <li class="side-nav-item">
-                <a href="{{route('student.classes')}}" class="side-nav-link">
+                <a href="{{route('teacher.courses')}}" class="side-nav-link">
                     <i class="uil-home-alt"></i>
-                    <span> Classes </span>
+                    <span> Courses </span>
                 </a>
             </li>
 

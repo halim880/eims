@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Academic\Course;
+use App\Models\Academic\Session;
 use App\Traits\UserInfo;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
@@ -30,6 +31,10 @@ class Student extends Model
     public function department()
     {
         return $this->belongsTo(Department::class);
+    }
+
+    public function session(){
+        return $this->belongsTo(Session::class);
     }
 
     public function coursesList(){

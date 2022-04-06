@@ -43,8 +43,10 @@ class CreateResultsTable extends Migration
 
             $table->double('full_marks');
             $table->double('pass_mark_parcentage')->nullable();
-            $table->double('obtained_marks');
-
+            $table->double('final_marks');
+            $table->double('attendance_marks');
+            $table->double('term_test_marks');
+            
             $table->foreignId('stored_by_user_id')
                     ->references('id')
                     ->on('users')
