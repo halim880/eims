@@ -20,6 +20,7 @@ class CreateStudentsTable extends Migration
             $table->foreignId('department_id')->references('id')->on('departments')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('semester_id')->references('id')->on('semesters')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('session_id')->references('id')->on('sessions')->onDelete('cascade')->onUpdate('cascade');
+            $table->enum('gender', ['male', 'female', 'othes']);
             $table->string('dob');
             $table->string('phone');
             $table->string('blood_group')->nullable();

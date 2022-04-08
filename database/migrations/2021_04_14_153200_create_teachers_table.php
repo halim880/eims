@@ -20,12 +20,13 @@ class CreateTeachersTable extends Migration
             $table->string('phone');
             $table->string('nid');
             $table->string('dob');
+            $table->enum('gender', ['male', 'famale', 'others']);
+            $table->string('blood_group')->nullable();
             $table->string('father_name');
             $table->string('mother_name');
             $table->foreignId('department_id')->references('id')->on('departments');
             $table->string('current_address');
             $table->string('permanent_address');
-            $table->string('image');
             $table->timestamps();
         });
     }

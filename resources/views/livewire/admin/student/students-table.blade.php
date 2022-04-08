@@ -24,7 +24,7 @@
                             
                             <tbody>
                                 @foreach ($students as $student)
-                                <tr class="data_row" ondblclick ="showDetails({{$student->id}})">
+                                <tr class="data_row" ondblclick ="showDetails({{$student}})">
 
                                     <td>{{$student->id}}</td>
                                     <td>{{$student->name}}</td>
@@ -65,9 +65,9 @@
 
 <script>
 
-    function showDetails(id){
-        console.log(id);
+    function showDetails(student){
+        console.log(student);
 
-        window.location.href = "/student/details/"+id;
+        // window.location.href = "/student/details/"+id;
     }
 </script>

@@ -15,6 +15,10 @@ class SessionsTableSeeder extends Seeder
      */
     public function run()
     {
+        foreach (Session::all() as $session) {
+           $session->delete();
+        }
+        
         Session::create([
             'name'=> '2016-2017',
             'batch_number'=> '1',

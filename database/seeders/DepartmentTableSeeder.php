@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Department;
+use App\Models\Academic\Department;
 use Illuminate\Database\Seeder;
 
 class DepartmentTableSeeder extends Seeder
@@ -14,18 +14,22 @@ class DepartmentTableSeeder extends Seeder
      */
     public function run()
     {
+        foreach (Department::all() as $department) {
+            $department->delete();
+        }
+        
         $cse = Department::create([
-            'id'=>'101',
+            'id'=>'1',
             'name' => 'Computer Science & Engineering',
             'short_form' => 'CSE',
         ]);
         $eee = Department::create([
-            'id'=>'102',
+            'id'=>'2',
             'name' => 'Electrical & Electronics Engineering',
             'short_form' => 'EEE',
         ]);
         $cse = Department::create([
-            'id'=>'103',
+            'id'=>'3',
             'name' => 'Civil Engineering',
             'short_form' => 'CE',
         ]);

@@ -19,15 +19,15 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             SessionsTableSeeder::class,
             CoursesTableSeeder::class,
-            HostelSeeder::class,
-            StudentsTableSeeder::class,
-            HostelStudentSeeder::class,
-            TeacherSeeder::class,
+            //HostelSeeder::class,
+            //StudentsTableSeeder::class,
+            //HostelStudentSeeder::class,
+            //TeacherSeeder::class,
             
             SliderImageTableSeeder::class,
             EventsTableSeeder::class,
-            LibrarianSeeder::class,
-            BooksTableSeeder::class,
+            //LibrarianSeeder::class,
+            //BooksTableSeeder::class,
         ]);
     }
 }

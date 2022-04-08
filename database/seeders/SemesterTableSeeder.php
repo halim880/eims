@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Semester;
+use App\Models\Academic\Semester;
 use Illuminate\Database\Seeder;
 
 class SemesterTableSeeder extends Seeder
@@ -19,20 +19,21 @@ class SemesterTableSeeder extends Seeder
         }
 
         $semesters = [
-            [ 'id'=> 101, 'name'=> '1st year 1st semester', 'short_form'=>'1/1'],
-            [ 'id'=> 102, 'name'=> '1st year 2nd semester', 'short_form'=>'1/2'],
-            [ 'id'=> 103, 'name'=> '2nd year 1st semester', 'short_form'=>'2/1'],
-            [ 'id'=> 104, 'name'=> '2nd year 2nd semester', 'short_form'=>'2/2'],
-            [ 'id'=> 105, 'name'=> '3rd year 1st semester', 'short_form'=>'3/1'],
-            [ 'id'=> 106, 'name'=> '3rd year 2nd semester', 'short_form'=>'3/2'],
-            [ 'id'=> 107, 'name'=> '4th year 1st semester', 'short_form'=>'4/1'],
-            [ 'id'=> 108, 'name'=> '4th year 2nd semester', 'short_form'=>'4/2'],
+            [ 'id'=> 1001, 'name'=> '1st year 1st semester', 'short_form'=>'1/1'],
+            [ 'id'=> 1002, 'name'=> '1st year 2nd semester', 'short_form'=>'1/2'],
+            [ 'id'=> 1003, 'name'=> '2nd year 1st semester', 'short_form'=>'2/1'],
+            [ 'id'=> 1004, 'name'=> '2nd year 2nd semester', 'short_form'=>'2/2'],
+            [ 'id'=> 1005, 'name'=> '3rd year 1st semester', 'short_form'=>'3/1'],
+            [ 'id'=> 1006, 'name'=> '3rd year 2nd semester', 'short_form'=>'3/2'],
+            [ 'id'=> 1007, 'name'=> '4th year 1st semester', 'short_form'=>'4/1'],
+            [ 'id'=> 1008, 'name'=> '4th year 2nd semester', 'short_form'=>'4/2'],
         ];
 
-        $id = 101;
+        $id = 1;
         foreach ($semesters as $semester) {
             Semester::create([
                 'id'=> $semester['id'],
+                'number'=> $id,
                 'name'=> $semester['name'],
                 'short_form'=> $semester['short_form'],
             ]);
