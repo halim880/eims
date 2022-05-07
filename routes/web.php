@@ -15,11 +15,13 @@ include_once __DIR__ . '/material_routes.php';
 include_once __DIR__ . '/library_routes.php';
 include_once __DIR__ . '/data_entry_routes.php';
 
-Route::get('/', function () {
-    $events = Event::all();
-    $images = DB::table('slider_images')->get();
-    return view('material.home_page', compact('images', 'events'));
-});
+// Route::get('/', function () {
+//     $events = Event::all();
+//     $images = DB::table('slider_images')->get();
+//     return view('material.home_page', compact('images', 'events'));
+// });
+
+Route::view('/','web.landing_page');
 
 Route::get('admission-form', AdmissionApplication::class);
 
@@ -37,7 +39,3 @@ Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 
 Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 //SSLCOMMERZ END
-
-Route::post('/login', function(){
-    return request()->all();
-});

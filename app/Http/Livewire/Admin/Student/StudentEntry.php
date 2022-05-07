@@ -3,8 +3,8 @@
 namespace App\Http\Livewire\Admin\Student;
 
 use App\Models\Academic\Session;
-use App\Models\Department;
-use App\Models\Semester;
+use App\Models\Academic\Department;
+use App\Models\Academic\Semester;
 use App\Models\Student;
 use App\Models\User;
 use App\Repositories\StudentRepository;

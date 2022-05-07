@@ -1,5 +1,10 @@
-<section id="member_registration">
-    <div class="container">
+<section id="">
+    <div id="StudentEntryForm">
+
+    </div>
+
+
+    {{-- <div class="container">
         <div class="row mt-2">
             <div class="col-md-8">
                 <div class="card">
@@ -105,9 +110,11 @@
                   </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 </section>
+<script src="{{asset('js/app.js')}}"></script>
+
 
 <script>
     window.addEventListener('student-updated', event => {
